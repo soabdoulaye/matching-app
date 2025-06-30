@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dating App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="app-header">
+        <h1>Wakuwaku-style Dating</h1>
+        <nav>
+            <ul>
+                <li><a href="#register">Register</a></li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#messages">Messages</a></li>
+                <li><a href="#search">Search</a></li>
+                <li><a href="#board">Bulletin Board</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="register" class="card">
+            <h2>User Registration</h2>
+            <form>
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" min="18" required>
+                <button type="submit">Register</button>
+            </form>
+        </section>
+
+        <section id="profile" class="card">
+            <h2>Edit Profile <span class="badge verified">Verified</span></h2>
+            <form>
+                <label for="image">Profile Image</label>
+                <input type="file" id="image" accept="image/*">
+                <label for="bio">Bio</label>
+                <textarea id="bio" rows="3"></textarea>
+                <button type="submit">Save</button>
+            </form>
+            <button class="report-btn">Report User</button>
+        </section>
+
+        <section id="points" class="card">
+            <h2>Points</h2>
+            <p>Current Points: <span id="points-balance">0</span></p>
+            <button id="buy-points">Purchase Points</button>
+        </section>
+
+        <section id="messages" class="card">
+            <h2>Messages</h2>
+            <div id="message-list"></div>
+            <form id="message-form">
+                <input type="text" id="message-input" placeholder="Send a message">
+                <button type="submit">Send (1pt)</button>
+            </form>
+        </section>
+
+        <section id="search" class="card">
+            <h2>Search</h2>
+            <form id="search-form">
+                <label>Gender
+                    <select id="filter-gender">
+                        <option value="">Any</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </label>
+                <label>Age
+                    <input type="number" id="filter-age" min="18">
+                </label>
+                <label>Location
+                    <input type="text" id="filter-location">
+                </label>
+                <label>Purpose
+                    <input type="text" id="filter-purpose">
+                </label>
+                <button type="submit">Search</button>
+            </form>
+            <div id="search-results"></div>
+        </section>
+
+        <section id="footprints" class="card">
+            <h2>Footprints</h2>
+            <ul id="footprint-list"></ul>
+        </section>
+
+        <section id="favorites" class="card">
+            <h2>Favorites</h2>
+            <ul id="favorite-list"></ul>
+        </section>
+
+        <section id="block-list" class="card">
+            <h2>Block List</h2>
+            <ul id="blocked-users"></ul>
+        </section>
+
+        <section id="notifications" class="card">
+            <h2>Notifications</h2>
+            <ul id="notification-list"></ul>
+        </section>
+
+        <section id="board" class="card">
+            <h2>Image Bulletin Board</h2>
+            <form id="post-form">
+                <label for="category">Category</label>
+                <input type="text" id="category">
+                <input type="file" id="post-image" accept="image/*">
+                <button type="submit">Post</button>
+            </form>
+            <div id="board-posts"></div>
+            <button class="report-btn">Report Post</button>
+        </section>
+    </main>
+
+    <footer class="app-footer">
+        <p>&copy; 2024 Dating App</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

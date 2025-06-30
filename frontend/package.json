@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "echo 'start frontend server'",
+    "start": "react-scripts start",
     "build": "echo 'build frontend'"
   },
   "dependencies": {
